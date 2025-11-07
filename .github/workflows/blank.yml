@@ -11,22 +11,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: List repository secrets and save to file
-        run: |
-          curl -s -H "Authorization: Bearer $PAT_ORIGEN" \
-            -H "Accept: application/vnd.github+json" \
-            "https://api.github.com/repos/arademo/ar2970-secrets-00/actions/secrets" \
-            | jq -r '.secrets[].name' > repo_secrets.txt
-        env:
-          PAT_ORIGEN: ${{ secrets.PAT_ORIGEN }}      
+      # - name: List repository secrets and save to file
+      #   run: |
+      #     curl -s -H "Authorization: Bearer $PAT_ORIGEN" \
+      #       -H "Accept: application/vnd.github+json" \
+      #       "https://api.github.com/repos/arademo/ar2970-secrets-00/actions/secrets" \
+      #       | jq -r '.secrets[].name' > repo_secrets.txt
+      #   env:
+      #     PAT_ORIGEN: ${{ secrets.PAT_ORIGEN }}      
 
       - name: Create file with secret
-        run: echo "$REPO_SECRET" > repo_sec.txt
+        run: echo "$REPO_SECRET" > SECRETO_REPO_2.txt
         env:
-          REPO_SECRET: ${{ secrets.REPO_SECRET }}
+          REPO_SECRET: ${{ secrets.SECRETO_REPO_2 }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: repo-secret-artifact
+          name: SECRETO_REPO_2
           path: repo_sec.txt
