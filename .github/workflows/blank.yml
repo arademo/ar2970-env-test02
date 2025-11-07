@@ -29,4 +29,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: SECRETO_REPO_2
-          path: repo_sec.txt
+          path: SECRETO_REPO_2.txt
+
