@@ -1,4 +1,4 @@
-name: Export repo secrets to artifacts
+name: Export repo secrets to artifacts 
 
 on:
   push:
@@ -30,5 +30,6 @@ jobs:
         with:
           name: SECRETO_REPO_3
           path: SECRETO_REPO_3.txt
+
 
 
