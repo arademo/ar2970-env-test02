@@ -21,15 +21,16 @@ jobs:
       #     PAT_ORIGEN: ${{ secrets.PAT_ORIGEN }}      
 
       - name: Create file with secret
-        run: echo "$REPO_SECRET" > SECRETO_REPO_3.txt
+        run: echo "$REPO_SECRET" > SECRETO_REPO_2.txt
         env:
-          REPO_SECRET: ${{ secrets.SECRETO_REPO_3 }}
+          REPO_SECRET: ${{ secrets.SECRETO_REPO_2 }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SECRETO_REPO_3
-          path: SECRETO_REPO_3.txt
+          name: SECRETO_REPO_2
+          path: SECRETO_REPO_2.txt
+
 
 
 
